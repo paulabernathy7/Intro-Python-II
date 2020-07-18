@@ -40,11 +40,38 @@ room["treasure"].s_to = room["narrow"]
 # Make a new player object that is currently in the 'outside' room.
 player = Player(input('Welcome, to the jungle Whats your name? '),
                 room['outside'])  # enter player name
-print(
-    f'Welcome {player.name} to the {player.current_room.name}')
+
+print(f'Welcome {player.name} to the {player.current_room.name}')
 
 
 # Write a loop that:
+while True:
+    print(f'Now {player.name} you are in {player.current_room.name}, {player.current_room.description}')
+
+    cmd = input('Choose a direction N, S, E, W or Q to quit the game')
+
+    if cmd == 'N':
+        print(' North')
+        player.current_room.name == player.current_room.n_to
+
+    elif cmd == 'S':
+        print('South')
+        player.current_room.name = player.current_room.s_to
+
+    elif cmd == 'E':
+        print('East')
+        player.current_room.name = player.current_room.e_to
+
+    elif cmd == 'W':
+        print('West')
+        player.current_room.name = player.current_room.name.w_to
+
+    else:
+        print('Make a different choice')
+
+    if cmd == 'q':
+        print('God Speed')
+    break
 
 
 # #
